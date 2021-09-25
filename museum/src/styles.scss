@@ -352,6 +352,75 @@ html {
                 line-height: 21px;
             }
         }
+
+        /* Explore */
+
+        .explore-text-content {
+            width: 46%;
+            margin-right: 60px;
+        }
+        .explore-title {
+            margin-bottom: 103px;
+        }
+        .explore-text-info {
+            margin-top: 0;
+            margin-bottom: 25px;
+            font-family: "Roboto";
+            font-style: normal;
+            font-weight: 300;
+            font-size: 22px;
+            line-height: 38px;
+        }
+            .img-explore-container {
+                margin-top: 12px;
+                position: relative;
+                height: 700px;
+              }
+              
+              .img-explore-img {
+                position: absolute;
+                width: auto;
+                height: auto;
+                overflow: hidden;
+              }
+              
+              .img-explore-img img {
+                display: block;
+                width: 720px;
+                height: 700px;
+              }
+              
+              .img-explore-slider {
+                position: absolute;
+                z-index: 9;
+                cursor: ew-resize;
+                width: 30px;
+                height: 30px;
+                background-color: transparent;
+                border: 5px solid white;
+                border-radius: 50%;
+              }
+
+              .img-explore-slider::before {
+                content: "";
+                position: absolute;
+                top: 35px;
+                left: 12px;
+                height: 330px;
+                width: 5px;
+                background-color: white;
+              }
+
+              .img-explore-slider::after {
+                content: "";
+                position: absolute;
+                bottom: 35px;
+                left: 12px;
+                height: 330px;
+                width: 5px;
+                background-color: white;
+            }
+
     }
     .section:not(:first-child) {
         padding-top: 75px;
