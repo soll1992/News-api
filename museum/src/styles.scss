@@ -67,9 +67,8 @@ html {
 .page-main {
     .section {
         width: 100%;
-        .section-welcome {
-            height: 810px;
-        }
+        padding-top: 75px;
+        padding-bottom: 75px;
         .section-container {
             max-width: 1440px;
             margin-left: 12.55%;
@@ -435,6 +434,17 @@ html {
             background: none;
             cursor: pointer;
         }
+        .play-button:hover,
+        .prev-video:hover,
+        .next-video:hover,
+        .play-video:hover,
+        .mute-video:hover,
+        .frame-video:hover,
+        label:hover,
+        .arrow:hover {
+          opacity: 0.7;
+          transition: all 0.3s ease;
+        }
         .video-container {
             margin-top: 55px;
             .video-frame {
@@ -452,15 +462,6 @@ html {
                 background-repeat: no-repeat;
                 background-position: center center;
                 transition: all 0.3s ease;
-            }
-            .play-button:hover,
-            .prev-video:hover,
-            .next-video:hover,
-            .play-video:hover,
-            .mute-video:hover,
-            .frame-video:hover {
-              opacity: 0.7;
-              transition: all 0.3s ease;
             }
             .video-bar {
                 height: 85px;
@@ -608,10 +609,75 @@ html {
                 transform: rotate(-180deg)
             }
         }
+        /* Gallery */
+        .gallery-subsection {
+            display: block;
+            .picture-container {
+                position: relative;
+                margin-top: 75px;
+                height: 1960px;
+                overflow-y: hidden; 
+            }
+            .picture-container::after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 360px;
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+                bottom: 0;
+            }
+            .picture-inner-container {
+                column-count: 3;
+                column-gap: 36px;
+                height: 3000px;
+            }
+            .gallery-img {
+                width: 456px;
+                margin-bottom: 24px;
+                display: block;
+            }
+            
+            .gallery-img5,
+            .gallery-img10 {
+                break-after: column;
+            }
+
+            .gallery-img1,
+            .gallery-img11{
+                margin-top: 50px;
+            }
+        }
+        /* Tickets */
+        .tickets-section {
+            display: block;
+            .tickets-wrapper {
+                display: flex;
+                margin-top: 103px;
+                img {
+                    width: 720px;
+                }
+            }
+            .tickets-bold {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 28px;
+                line-height: 33px;
+                color: #000000;
+
+            }
+            .ticket-radio {
+                color: black;
+            }
+        }
     }
-    .section:not(:first-child) {
-        padding-top: 75px;
-        padding-bottom: 75px;
+    .section-welcome {
+        height: 810px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+    .gallery-section {
+        padding-bottom: 0;
     }
     .white-text {
         color: white;
