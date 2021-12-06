@@ -4,9 +4,12 @@
     "extends": [
         "plugin:prettier/recommended",
         "prettier",
+        "eslint:recommended",
+        "airbnb-typescript/base",
         "plugin:@typescript-eslint/recommended"
     ],
     "parserOptions": {
+        "project": "./tsconfig.json",
         "ecmaVersion": 2020,
         "sourceType": "module"
     },
@@ -19,7 +22,7 @@
         "no-debugger": "off",
         "no-console": 0,
         "class-methods-use-this": "off",
-        "@typescript-eslint/rule-name": "error"
+        "@typescript-eslint/no-explicit-any": "error"
     }
 }
 
