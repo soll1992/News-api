@@ -3,10 +3,9 @@
     "plugins": ["prettier", "import","@typescript-eslint"],
     "extends": [
         "plugin:prettier/recommended",
-        "prettier",
-        "eslint:recommended",
         "airbnb-typescript/base",
-        "plugin:@typescript-eslint/recommended"
+        "plugin:@typescript-eslint/recommended",
+        "prettier"
     ],
     "parserOptions": {
         "project": "./tsconfig.json",
@@ -21,6 +20,7 @@
     "rules": {
         "no-debugger": "off",
         "no-console": 0,
+        "prettier/prettier": "error",
         "class-methods-use-this": "off",
         "@typescript-eslint/no-explicit-any": "error"
     }
