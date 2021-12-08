@@ -1,13 +1,17 @@
+.nav-buttons,
 .sources {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     width: 100%;
-    height: 120px;
+    height: auto;
+    margin-bottom: 30px;
     overflow: auto;
     align-items: center;
     font: 300 1em 'Fira Sans', sans-serif;
 }
 
+
+.button__item,
 .source__item {
     background: none;
     border: 2px solid #30c5ff;
@@ -20,6 +24,18 @@
     cursor: pointer;
 }
 
+.button__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;    
+    height: 50px;
+    padding: 0;
+    border-radius: 50%;
+}
+
+.button__item:hover,
+.button__item:focus,
 .source__item:hover,
 .source__item:focus {
     border-color: #3fcc59;

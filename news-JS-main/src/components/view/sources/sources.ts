@@ -14,8 +14,28 @@ class Sources {
 
             fragment.append(sourceClone);
         });
-
+        (document.querySelector('.sources') as HTMLElement).innerHTML = '';
         (document.querySelector('.sources') as HTMLElement).append(fragment);
+    }
+
+    drawButton(data: Array<SourceT>) {
+        const fragment = document.createDocumentFragment();
+        const buttonItemTemp = document.querySelector('#buttonItemTemp') as HTMLTemplateElement;
+        const buttons: Set<string> = new Set();
+
+        data.forEach((item) => {
+            buttons.add(item.name.charAt(0));
+        });
+
+        buttons.forEach((item) => {
+            const buttonClone = buttonItemTemp.content.cloneNode(true) as HTMLElement;
+
+            (buttonClone.querySelector('.button__item-name') as HTMLElement).textContent = item;
+
+            fragment.append(buttonClone);
+        });
+
+        (document.querySelector('.nav-buttons') as HTMLElement).append(fragment);
     }
 }
 
