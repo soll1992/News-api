@@ -1,4 +1,4 @@
-import { NewsAndSource } from '../options';
+import { DataI } from '../options';
 
 class Loader {
     baseLink: string;
@@ -15,7 +15,7 @@ class Loader {
         callback = () => {
             console.error('No callback for GET response');
         }
-    ): void {
+    ) {
         this.load('GET', endpoint, callback, options);
     }
 
@@ -35,18 +35,14 @@ class Loader {
         };
         const urlOptions: TUrlOptions = { ...this.options, ...options };
         let url = `${this.baseLink}${endpoint}?`;
-        console.log(this.baseLink);
-        console.log(urlOptions);
-        console.log(endpoint);
 
         Object.keys(urlOptions).forEach((key) => {
             url += `${key}=${urlOptions[key]}&`;
         });
-        console.log(url);
         return url.slice(0, -1);
     }
 
-    load(method: string, endpoint: string, callback: (data: Partial<NewsAndSource>) => void, options = {}) {
+    load(method: string, endpoint: string, callback: (data: Partial<DataI>) => void, options = {}) {
         fetch(this.makeUrl({ options, endpoint }), { method })
             .then(this.errorHandler)
             .then((res) => res.json())

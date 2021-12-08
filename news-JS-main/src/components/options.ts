@@ -33,7 +33,9 @@ export interface SourceI {
     sources: SourceT[];
 }
 
-export interface NewsAndSource {
+export interface DataI {
     articles: ArticleT[];
     sources: SourceT[];
 }
+
+export type CallbackType<T> = (data?: T) => void;
