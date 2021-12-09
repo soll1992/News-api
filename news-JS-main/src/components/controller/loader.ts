@@ -6,16 +6,16 @@ enum Errors {
 }
 
 class Loader {
-    baseLink: string;
+    private baseLink: string;
 
-    options: object;
+    private options: object;
 
     constructor(baseLink: string, options: object) {
         this.baseLink = baseLink;
         this.options = options;
     }
 
-    getResp(
+    public getResp(
         { endpoint, options = {} }: { endpoint: string; options?: object },
         callback = () => {
             console.error('No callback for GET response');
@@ -24,7 +24,7 @@ class Loader {
         this.load('GET', endpoint, callback, options);
     }
 
-    errorHandler(res: Response) {
+    private errorHandler(res: Response) {
         if (!res.ok) {
             if (res.status === Errors.Unauthorized || res.status === Errors.NotFound)
                 console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
@@ -34,7 +34,7 @@ class Loader {
         return res;
     }
 
-    makeUrl({ options, endpoint }: { options: object; endpoint: string }): string {
+    private makeUrl({ options, endpoint }: { options: object; endpoint: string }): string {
         type TUrlOptions = {
             [prop: string]: string;
         };
@@ -47,7 +47,7 @@ class Loader {
         return url.slice(0, -1);
     }
 
-    load(method: string, endpoint: string, callback: (data: Partial<DataI>) => void, options = {}) {
+    private load(method: string, endpoint: string, callback: (data: Partial<DataI>) => void, options = {}) {
         fetch(this.makeUrl({ options, endpoint }), { method })
             .then(this.errorHandler)
             .then((res) => res.json())

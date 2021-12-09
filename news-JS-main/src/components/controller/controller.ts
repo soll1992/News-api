@@ -3,7 +3,7 @@ import { NewsI, SourceI } from '../options';
 import { CallbackType } from '../options';
 
 class AppController extends AppLoader {
-    getSources(callback: CallbackType<SourceI> | undefined): void {
+    public getSources(callback: CallbackType<SourceI> | undefined): void {
         super.getResp(
             {
                 endpoint: 'sources',
@@ -12,7 +12,7 @@ class AppController extends AppLoader {
         );
     }
 
-    getNews(e: Event, callback: CallbackType<NewsI> | undefined): void {
+    public getNews(e: Event, callback: CallbackType<NewsI> | undefined): void {
         let target = e.target as HTMLElement;
         const newsContainer = e.currentTarget as HTMLElement;
 

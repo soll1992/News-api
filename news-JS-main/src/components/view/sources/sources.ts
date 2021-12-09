@@ -2,7 +2,7 @@ import './sources.css';
 import { SourceT } from '../../options';
 
 class Sources {
-    draw(data: Array<SourceT>) {
+    public draw(data: Array<SourceT>) {
         const fragment = document.createDocumentFragment();
         const sourceItemTemp = document.querySelector('#sourceItemTemp') as HTMLTemplateElement;
 
@@ -18,7 +18,7 @@ class Sources {
         (document.querySelector('.sources') as HTMLElement).append(fragment);
     }
 
-    drawButton(data: Array<SourceT>) {
+    public drawButton(data: Array<SourceT>) {
         const fragment = document.createDocumentFragment();
         const buttonItemTemp = document.querySelector('#buttonItemTemp') as HTMLTemplateElement;
         const buttons: Set<string> = new Set();

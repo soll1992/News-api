@@ -12,12 +12,12 @@ export class AppView {
         this.sources = new Sources();
     }
 
-    drawNews(data: NewsI | undefined) {
+    public drawNews(data: NewsI | undefined) {
         const values = data?.articles ? data?.articles : [];
         this.news.draw(values);
     }
 
-    drawSources(e: Event, data: SourceI | undefined) {
+    public drawSources(e: Event, data: SourceI | undefined) {
         const values: Array<SourceT> = [];
         const target = e.target as HTMLElement;
         data?.sources.forEach((item) => {
@@ -28,7 +28,7 @@ export class AppView {
         this.sources.draw(values);
     }
 
-    drawButtons(data: SourceI | undefined) {
+    public drawButtons(data: SourceI | undefined) {
         const values = data?.sources ? data?.sources : [];
         this.sources.drawButton(values);
     }
