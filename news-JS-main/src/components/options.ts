@@ -1,4 +1,4 @@
-export type ArticleT = {
+export type NewsT = {
     source: {
         id: string;
         name: string;
@@ -25,7 +25,7 @@ export type SourceT = {
 export interface NewsI {
     status: string;
     totalResults: string;
-    articles: ArticleT[];
+    articles: NewsT[];
 }
 
 export interface SourceI {
@@ -34,8 +34,10 @@ export interface SourceI {
 }
 
 export interface DataI {
-    articles: ArticleT[];
+    articles: NewsT[];
     sources: SourceT[];
 }
+
+export type ForPickOnly = Pick<DataI, 'sources'>;
 
 export type CallbackType<T> = (data?: T) => void;

@@ -1,6 +1,5 @@
 import AppController from '../controller/controller';
 import { AppView } from '../view/appView';
-/* import { SourceT } from '../options'; */
 
 class App {
     private controller: AppController;
