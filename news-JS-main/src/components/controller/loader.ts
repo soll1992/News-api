@@ -6,9 +6,9 @@ enum Errors {
 }
 
 class Loader {
-    private baseLink: string;
+    private readonly baseLink: string;
 
-    private options: object;
+    private readonly options: object;
 
     constructor(baseLink: string, options: object) {
         this.baseLink = baseLink;
